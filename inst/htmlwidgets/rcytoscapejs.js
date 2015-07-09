@@ -65,7 +65,8 @@ HTMLWidgets.widget({
                     'text-outline-color': 'data(color)',
                     'background-color': 'data(color)',
                     'width': 'data(width)',
-                    'height': 'data(height)'
+                    'height': 'data(height)',
+                    'weight': 'data(weight)'
                 })
                 .selector('edge')
                 .css({
@@ -73,8 +74,7 @@ HTMLWidgets.widget({
                     'source-arrow-color': 'data(color)',
                     'target-arrow-color': 'data(color)',
                     'source-arrow-shape': 'data(edgeSourceShape)',
-                    'target-arrow-shape': 'data(edgeTargetShape)',
-                    'width': 'data(width)'
+                    'target-arrow-shape': 'data(edgeTargetShape)'
                 })
                 .selector(':selected')
                 .css({
