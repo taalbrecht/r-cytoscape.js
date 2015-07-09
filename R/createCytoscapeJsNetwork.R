@@ -44,7 +44,7 @@ createCytoscapeJsNetwork <- function(nodeData, edgeData,
                                      nodeColor="#888888", nodeShape="ellipse",
                                      nodeHeight="70", nodeWidth="70", nodeLabelColor="#FFFFFF",
                                      edgeColor="#888888", edgeSourceShape="none",
-                                     edgeTargetShape="triangle", nodeHref="") {
+                                     edgeTargetShape="triangle", nodeHref="", nodeWeight = "1", edgeWidth = "5") {
 
     # There must be nodes and nodeData must have at least id and name columns
     if(nrow(nodeData) == 0 || !(all(c("id", "name") %in% names(nodeData)))) {
@@ -82,6 +82,10 @@ createCytoscapeJsNetwork <- function(nodeData, edgeData,
       nodeData$nodeLabelColor <- rep(nodeLabelColor, nrow(nodeData))
     }
   
+    if(!("weight" %in% colnames(nodeData))) {
+      nodeData$weight <- rep(nodeWeight, nrow(nodeData))
+    }
+  
     rownames(nodeData) <- NULL
     nodeEntries <- apply(nodeData,1,function(x){
         list(data=as.list(x))
@@ -99,6 +103,10 @@ createCytoscapeJsNetwork <- function(nodeData, edgeData,
 
     if(!("targetShape" %in% colnames(edgeData))) {
         edgeData$edgeTargetShape <- rep(edgeTargetShape, nrow(edgeData))
+    }
+
+    if(!("width" %in% colnames(edgeData))) {
+        edgeData$width <- rep(edgeWidth, nrow(edgeData))
     }
 
     rownames(edgeData) <- NULL
