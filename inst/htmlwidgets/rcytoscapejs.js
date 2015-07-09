@@ -74,7 +74,7 @@ HTMLWidgets.widget({
                     'target-arrow-color': 'data(color)',
                     'source-arrow-shape': 'data(edgeSourceShape)',
                     'target-arrow-shape': 'data(edgeTargetShape)',
-                    'strength': 'data(strength)'
+                    'width': 'data(width)'
                 })
                 .selector(':selected')
                 .css({
