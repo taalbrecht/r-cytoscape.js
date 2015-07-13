@@ -44,7 +44,8 @@ createCytoscapeJsNetwork <- function(nodeData, edgeData,
                                      nodeColor="#888888", nodeShape="ellipse",
                                      nodeHeight="70", nodeWidth="70", nodeLabelColor="#FFFFFF",
                                      edgeColor="#888888", edgeSourceShape="none",
-                                     edgeTargetShape="triangle", nodeHref="", nodeWeight = "1", edgeWidth = "2") {
+                                     edgeTargetShape="triangle", nodeHref="", nodeWeight = "1", edgeWidth = "2",
+                                     nodeOverlayColor = "#FF00FF", nodeOverlayPadding = "0", nodeOverlayOpacity = "0") {
 
     # There must be nodes and nodeData must have at least id and name columns
     if(nrow(nodeData) == 0 || !(all(c("id", "name") %in% names(nodeData)))) {
@@ -84,6 +85,18 @@ createCytoscapeJsNetwork <- function(nodeData, edgeData,
   
     if(!("weight" %in% colnames(nodeData))) {
       nodeData$weight <- rep(nodeWeight, nrow(nodeData))
+    }
+  
+    if(!("overlay_color" %in% colnames(nodeData))) {
+      nodeData$overlaycolor <- rep(nodeOverlayColor, nrow(nodeData))
+    }
+    
+    if(!("overlay_padding" %in% colnames(nodeData))) {
+      nodeData$overlaypadding <- rep(nodeOverlayPadding, nrow(nodeData))
+    }
+    
+    if(!("overlay_opacity" %in% colnames(nodeData))) {
+      nodeData$overlayopacity <- rep(nodeOverlayOpacity, nrow(nodeData))
     }
   
     rownames(nodeData) <- NULL
