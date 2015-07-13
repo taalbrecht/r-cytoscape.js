@@ -45,7 +45,7 @@ createCytoscapeJsNetwork <- function(nodeData, edgeData,
                                      nodeHeight="70", nodeWidth="70", nodeLabelColor="#FFFFFF",
                                      edgeColor="#888888", edgeSourceShape="none",
                                      edgeTargetShape="triangle", nodeHref="", nodeWeight = "1", edgeWidth = "2",
-                                     nodeOverlayColor = "#FF00FF", nodeOverlayPadding = "0", nodeOverlayOpacity = "0") {
+                                     nodeBorderStyle = "solid", nodeBorderColor = "#FF00FF", nodeBorderWidth = "0", nodeBorderOpacity = "0") {
 
     # There must be nodes and nodeData must have at least id and name columns
     if(nrow(nodeData) == 0 || !(all(c("id", "name") %in% names(nodeData)))) {
@@ -87,17 +87,35 @@ createCytoscapeJsNetwork <- function(nodeData, edgeData,
       nodeData$weight <- rep(nodeWeight, nrow(nodeData))
     }
   
-    if(!("overlaycolor" %in% colnames(nodeData))) {
-      nodeData$overlaycolor <- rep(nodeOverlayColor, nrow(nodeData))
+    if(!("borderstyle" %in% colnames(nodeData))) {
+      nodeData$borderstyle <- rep(nodeBorderStyle, nrow(nodeData))
+    }
+
+    if(!("bordercolor" %in% colnames(nodeData))) {
+      nodeData$bordercolor <- rep(nodeBorderColor, nrow(nodeData))
     }
     
-    if(!("overlaypadding" %in% colnames(nodeData))) {
-      nodeData$overlaypadding <- rep(nodeOverlayPadding, nrow(nodeData))
+    if(!("borderwidth" %in% colnames(nodeData))) {
+      nodeData$borderwidth <- rep(nodeBorderPadding, nrow(nodeData))
     }
     
-    if(!("overlayopacity" %in% colnames(nodeData))) {
-      nodeData$overlayopacity <- rep(nodeOverlayOpacity, nrow(nodeData))
+    if(!("borderopacity" %in% colnames(nodeData))) {
+      nodeData$borderopacity <- rep(nodeBorderOpacity, nrow(nodeData))
     }
+    
+    #Control node overlay color (need to add in to js script
+  
+#    if(!("overlaycolor" %in% colnames(nodeData))) {
+#      nodeData$overlaycolor <- rep(nodeOverlayColor, nrow(nodeData))
+#    }
+#    
+#    if(!("overlaypadding" %in% colnames(nodeData))) {
+#      nodeData$overlaypadding <- rep(nodeOverlayPadding, nrow(nodeData))
+#    }
+#    
+#    if(!("overlayopacity" %in% colnames(nodeData))) {
+#      nodeData$overlayopacity <- rep(nodeOverlayOpacity, nrow(nodeData))
+#    }
   
     rownames(nodeData) <- NULL
     nodeEntries <- apply(nodeData,1,function(x){
