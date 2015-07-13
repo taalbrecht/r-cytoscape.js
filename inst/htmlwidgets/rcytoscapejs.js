@@ -67,9 +67,10 @@ HTMLWidgets.widget({
                     'width': 'data(width)',
                     'height': 'data(height)',
                     'weight': 'data(weight)',
-                    'overlay-color': 'data(overlaycolor)',
-                    'overlay-padding': 'data(overlaypadding)',
-                    'overlay-opacity': 'data(overlayopacity)'
+                    'border-style': 'data(borderstyle)',
+                    'border-color': 'data(bordercolor)',
+                    'border-width': 'data(borderwidth)',
+                    'border-opacity': 'data(borderopacity)'
                 })
                 .selector('edge')
                 .css({
