@@ -66,7 +66,10 @@ HTMLWidgets.widget({
                     'background-color': 'data(color)',
                     'width': 'data(width)',
                     'height': 'data(height)',
-                    'weight': 'data(weight)'
+                    'weight': 'data(weight)',
+                    'overlay-color': 'data(overlay-color)',
+                    'overlay-padding': 'data(overlay-padding)',
+                    'overlay-opacity': 'data(overlay-opacity)'
                 })
                 .selector('edge')
                 .css({
