@@ -96,7 +96,7 @@ createCytoscapeJsNetwork <- function(nodeData, edgeData,
     }
     
     if(!("borderwidth" %in% colnames(nodeData))) {
-      nodeData$borderwidth <- rep(nodeBorderPadding, nrow(nodeData))
+      nodeData$borderwidth <- rep(nodeBorderWidth, nrow(nodeData))
     }
     
     if(!("borderopacity" %in% colnames(nodeData))) {
