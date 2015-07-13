@@ -87,15 +87,15 @@ createCytoscapeJsNetwork <- function(nodeData, edgeData,
       nodeData$weight <- rep(nodeWeight, nrow(nodeData))
     }
   
-    if(!("overlay_color" %in% colnames(nodeData))) {
+    if(!("overlaycolor" %in% colnames(nodeData))) {
       nodeData$overlaycolor <- rep(nodeOverlayColor, nrow(nodeData))
     }
     
-    if(!("overlay_padding" %in% colnames(nodeData))) {
+    if(!("overlaypadding" %in% colnames(nodeData))) {
       nodeData$overlaypadding <- rep(nodeOverlayPadding, nrow(nodeData))
     }
     
-    if(!("overlay_opacity" %in% colnames(nodeData))) {
+    if(!("overlayopacity" %in% colnames(nodeData))) {
       nodeData$overlayopacity <- rep(nodeOverlayOpacity, nrow(nodeData))
     }
   
