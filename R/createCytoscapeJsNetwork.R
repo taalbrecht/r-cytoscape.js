@@ -45,7 +45,7 @@ createCytoscapeJsNetwork <- function(nodeData, edgeData,
                                      nodeHeight="70", nodeWidth="70", nodeLabelColor="#FFFFFF",
                                      edgeColor="#888888", edgeSourceShape="none",
                                      edgeTargetShape="triangle", nodeHref="", nodeWeight = "1", edgeWidth = "2",
-                                     nodeBorderStyle = "solid", nodeBorderColor = "#FF00FF", nodeBorderWidth = "0", nodeBorderOpacity = "0") {
+                                     nodeBorderStyle = "solid", nodeBorderColor = "#FF00FF", nodeBorderWidth = "0", nodeBorderOpacity = "0", nodeRank = "") {
 
     # There must be nodes and nodeData must have at least id and name columns
     if(nrow(nodeData) == 0 || !(all(c("id", "name") %in% names(nodeData)))) {
@@ -101,6 +101,10 @@ createCytoscapeJsNetwork <- function(nodeData, edgeData,
     
     if(!("borderopacity" %in% colnames(nodeData))) {
       nodeData$borderopacity <- rep(nodeBorderOpacity, nrow(nodeData))
+    }
+    
+    if(!("rank" %in% colnames(nodeData))) {
+      nodeData$rank <- rep(nodeRank, nrow(nodeData))
     }
     
     #Control node overlay color (need to add in to js script
