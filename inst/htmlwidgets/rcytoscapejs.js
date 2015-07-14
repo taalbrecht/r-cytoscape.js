@@ -70,7 +70,8 @@ HTMLWidgets.widget({
                     'border-style': 'data(borderstyle)',
                     'border-color': 'data(bordercolor)',
                     'border-width': 'data(borderwidth)',
-                    'border-opacity': 'data(borderopacity)'
+                    'border-opacity': 'data(borderopacity)',
+                    'rank': 'data(rank)'
                 })
                 .selector('edge')
                 .css({
