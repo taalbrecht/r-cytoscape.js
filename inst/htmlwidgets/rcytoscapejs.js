@@ -161,8 +161,7 @@ HTMLWidgets.widget({
                     }
 
                     //console.log(globalnodes);
-                    console.log(selected);
-                    Shiny.onInputChange("highlightedNodes", selected);
+                    //console.log(selected);
 
                     var keys = [];
                     for (var i = 0; i < selected.length; i++) {
