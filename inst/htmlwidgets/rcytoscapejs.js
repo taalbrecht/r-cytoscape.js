@@ -127,6 +127,7 @@ HTMLWidgets.widget({
                 cy.on('tap', 'node', function (event) {
                     var nodeHighlighted = this.hasClass("highlighted");
                     console.log(nodeHighlighted);
+                    Shiny.onInputChange("highlightedNodes", nodeHighlighted);
                     var nodes = this.closedNeighborhood().connectedNodes();
                     //console.log(nodes);
                     console.log("A:" + el.id);
