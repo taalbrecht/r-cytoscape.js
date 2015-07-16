@@ -84,16 +84,16 @@ HTMLWidgets.widget({
                 })
                 .selector(':selected')
                 .css({
-                    'background-color': '#FF00FF',
+                    'background-color': '#000000',
                     'line-color': 'black',
                     'target-arrow-color': 'black',
                     'source-arrow-color': 'black'
                 })
                 .selector('.highlighted')
                 .css({
-                    'background-color': '#FF00FF',
-                    'line-color': '#FF00FF',
-                    'target-arrow-color': '#FF00FF',
+                    'background-color': '#000000',
+                    'line-color': '#000000',
+                    'target-arrow-color': '#000000',
                     'transition-property': 'background-color, line-color, target-arrow-color',
                     'transition-duration': '0.5s'
                 })
@@ -203,18 +203,14 @@ HTMLWidgets.widget({
                             ready: true
                         },
                         position: {
-                            my: 'top center',
-                            at: 'bottom center',
+                            my: 'bottom center',
+                            at: 'top center',
                             adjust: {
                               cyViewport: true
                             },
                             effect: false
                         },
-                        hide: {
-                            fixed: true,
-                            event: false,
-                            inactive: 1000
-                        },
+                        hide: false,
                         style: {
                             classes: 'qtip-bootstrap',
                             tip: {
