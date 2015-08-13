@@ -42,7 +42,7 @@
 #' @export
 createCytoscapeJsNetwork <- function(nodeData, edgeData,
                                      nodeColor="#888888", nodeShape="ellipse",
-                                     nodeHeight="70", nodeWidth="70", nodeLabelColor="#FFFFFF",
+                                     nodeHeight="70", nodeWidth="70", nodeOpacity = "1", nodeLabelColor="#FFFFFF",
                                      edgeColor="#888888", edgeSourceShape="none",
                                      edgeTargetShape="triangle", nodeHref="", nodeWeight = "1", edgeWidth = "2",
                                      nodeBorderStyle = "solid", nodeBorderColor = "#FF00FF", nodeBorderWidth = "0", nodeBorderOpacity = "0", nodeRank = "") {
@@ -77,6 +77,10 @@ createCytoscapeJsNetwork <- function(nodeData, edgeData,
   
     if(!("width" %in% colnames(nodeData))) {
       nodeData$width <- rep(nodeWidth, nrow(nodeData))
+    }
+    
+    if(!("opacity" %in% colnames(nodeData))) {
+      nodeData$opacity <- rep(nodeOpacity, nrow(nodeData))
     }
   
     if(!("nodeLabelColor" %in% colnames(nodeData))) {
