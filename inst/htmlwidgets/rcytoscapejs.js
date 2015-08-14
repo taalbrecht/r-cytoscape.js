@@ -59,7 +59,7 @@ HTMLWidgets.widget({
                 .selector('node')
                 .css({
                     'color': 'data(nodeLabelColor)',
-                    'opacity': 'data(nodeOpacity)',
+                    'opacity': 'data(opacity)',
                     'content': 'data(name)',
                     'text-valign': 'center',
                     'shape': 'data(shape)',
