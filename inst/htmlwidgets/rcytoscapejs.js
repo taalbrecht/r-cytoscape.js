@@ -262,7 +262,7 @@ HTMLWidgets.widget({
                         },
                         hide: {
                             fixed: true,
-                            event: false,
+                            event: 'mouseout',
                             inactive: 2000
                         },
                         style: {
