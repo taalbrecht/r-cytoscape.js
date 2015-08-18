@@ -224,7 +224,7 @@ HTMLWidgets.widget({
                 });
                 cy.on('mousemove', 'node', function (event) {
                     var node = this;
-                    $(".qtip").remove();
+                    //$(".qtip").remove();
                     //console.log(event);
                     
                     var name = node._private.data.name; 
