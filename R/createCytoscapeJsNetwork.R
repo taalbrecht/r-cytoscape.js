@@ -44,7 +44,7 @@ createCytoscapeJsNetwork <- function(nodeData, edgeData,
                                      nodeColor="#888888", nodeShape="ellipse",
                                      nodeHeight="70", nodeWidth="70", nodeOpacity = "1", nodeLabelColor="#FFFFFF",
                                      edgeColor="#888888", edgeSourceShape="none", edgeTargetShape="triangle", edgeOpacity = "1",
-                                     nodeHref="", nodeWeight = "1", edgeWidth = "2",
+                                     nodeHref="", nodeHrefclick = "", nodeWeight = "1", edgeWidth = "2",
                                      nodeBorderStyle = "solid", nodeBorderColor = "#FF00FF", nodeBorderWidth = "0", nodeBorderOpacity = "0", nodeRank = "") {
 
     # There must be nodes and nodeData must have at least id and name columns
@@ -69,6 +69,10 @@ createCytoscapeJsNetwork <- function(nodeData, edgeData,
 
     if(!("href" %in% colnames(nodeData))) {
         nodeData$href <- rep(nodeHref, nrow(nodeData))
+    }
+
+    if(!("hrefclick" %in% colnames(nodeData))) {
+        nodeData$hrefclick <- rep(nodeHrefclick, nrow(nodeData))
     }
 
     if(!("height" %in% colnames(nodeData))) {
