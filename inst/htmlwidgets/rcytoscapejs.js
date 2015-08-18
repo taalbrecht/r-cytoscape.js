@@ -222,6 +222,58 @@ HTMLWidgets.widget({
                         }
                     });
                 });
+                cy.on('mousemove', 'node', function (event) {
+                    var node = this;
+                    $(".qtip").remove();
+                    //console.log(event);
+                    
+                    var name = node._private.data.name; 
+                    var href = node._private.data.href; 
+
+                    var target = event.cyTarget;
+                    var sourceName = target.data("id");
+                    var targetName = target.data("href");
+                    console.log(sourceName);
+                    //console.log(targetName);
+
+                    var x = event.cyRenderedPosition.x;
+                    var y = event.cyRenderedPosition.y;
+                    //var x = event.cyPosition.x;
+                    //var y = event.cyPosition.y;
+                    //console.log("x="+x+" Y="+y);
+
+                    cy.getElementById(node.id()).qtip({
+                        content: {
+                            text: function (event, api) {
+                              // Retrieve content from custom attribute of the $('.selector') elements.
+                              return href;
+                            }
+                        },
+                        show: {
+                            ready: true
+                        },
+                        position: {
+                            my: 'top center',
+                            at: 'bottom center',
+                            adjust: {
+                              cyViewport: true
+                            },
+                            effect: false
+                        },
+                        hide: {
+                            fixed: true,
+                            event: false,
+                            inactive: 2000
+                        },
+                        style: {
+                            classes: 'qtip-bootstrap',
+                            tip: {
+                              width: 16,
+                              height: 8
+                            }
+                        }
+                    });
+                });
             }
         });
     }
