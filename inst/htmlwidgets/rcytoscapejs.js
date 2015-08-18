@@ -262,8 +262,7 @@ HTMLWidgets.widget({
                         },
                         hide: {
                             fixed: true,
-                            event: 'mouseout',
-                            inactive: 2000
+                            event: 'mouseout'
                         },
                         style: {
                             classes: 'qtip-bootstrap',
