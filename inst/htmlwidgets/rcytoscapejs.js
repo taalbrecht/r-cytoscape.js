@@ -180,7 +180,7 @@ HTMLWidgets.widget({
                     //console.log(event);
                     
                     var name = node._private.data.name; 
-                    var href = node._private.data.href; 
+                    var hrefclick = node._private.data.hrefclick; 
 
                     var target = event.cyTarget;
                     var sourceName = target.data("id");
@@ -198,7 +198,7 @@ HTMLWidgets.widget({
                         content: {
                             text: function (event, api) {
                               // Retrieve content from custom attribute of the $('.selector') elements.
-                              return href;
+                              return hrefclick;
                             }
                         },
                         show: {
