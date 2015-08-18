@@ -216,7 +216,7 @@ HTMLWidgets.widget({
                         style: {
                             classes: 'qtip-bootstrap',
                             tip: {
-                              width: 16,
+                              width: 48,
                               height: 8
                             }
                         }
