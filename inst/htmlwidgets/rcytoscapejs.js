@@ -184,7 +184,7 @@ HTMLWidgets.widget({
 
                     var target = event.cyTarget;
                     var sourceName = target.data("id");
-                    var targetName = target.data("href");
+                    var targetName = target.data("hrefclick");
                     console.log(sourceName);
                     //console.log(targetName);
 
@@ -253,8 +253,8 @@ HTMLWidgets.widget({
                             ready: true
                         },
                         position: {
-                            my: 'top center',
-                            at: 'bottom center',
+                            my: 'bottom center',
+                            at: 'top center',
                             adjust: {
                               cyViewport: true
                             },
