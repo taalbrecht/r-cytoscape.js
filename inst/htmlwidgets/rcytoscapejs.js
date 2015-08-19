@@ -171,7 +171,7 @@ HTMLWidgets.widget({
                         for (var k in kk) keys.push(k);
                     }
                     console.log(keys);
-                    Shiny.onInputChange("connectedNodes", keys);s
+                    Shiny.onInputChange("connectedNodes", keys);
                 });
                 
                 cy.on('tap', 'node', function (event) {
