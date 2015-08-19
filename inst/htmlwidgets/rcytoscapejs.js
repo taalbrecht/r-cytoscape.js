@@ -171,7 +171,7 @@ HTMLWidgets.widget({
                         for (var k in kk) keys.push(k);
                     }
                     console.log(keys);
-                    Shiny.onInputChange("connectedNodes", keys);
+                    Shiny.onInputChange("connectedNodes", keys);s
                 });
                 
                 cy.on('tap', 'node', function (event) {
@@ -250,7 +250,8 @@ HTMLWidgets.widget({
                             }
                         },
                         show: {
-                            ready: true
+                            ready: true,
+                            effect: false
                         },
                         position: {
                             my: 'bottom center',
@@ -262,7 +263,8 @@ HTMLWidgets.widget({
                         },
                         hide: {
                             fixed: true,
-                            event: 'mouseout'
+                            event: 'mouseout',
+                            effect: false
                         },
                         style: {
                             classes: 'qtip-bootstrap',
