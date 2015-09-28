@@ -251,7 +251,8 @@ HTMLWidgets.widget({
                         },
                         show: {
                             ready: true,
-                            effect: false
+                            effect: false,
+                            delay: 500
                         },
                         position: {
                             my: 'bottom center',
