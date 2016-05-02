@@ -47,7 +47,7 @@
       opts.hide.cyViewport = opts.hide.cyViewport === undefined ? true : opts.hide.cyViewport;
 
       if( !opts.hide.event ){
-        opts.hide.event = 'unfocus';
+        opts.hide.event = 'mouseleave';
       }
 
       // so multiple qtips can exist at once (only works on recent qtip2 versions)
