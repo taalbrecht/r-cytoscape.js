@@ -264,7 +264,7 @@ HTMLWidgets.widget({
                         },
                         hide: {
                             fixed: true,
-                            event: 'mouseout',
+                            event: 'mouseleave',
                             effect: false
                         },
                         style: {
