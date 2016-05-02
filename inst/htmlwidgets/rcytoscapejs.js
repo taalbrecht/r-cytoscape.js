@@ -264,9 +264,21 @@ HTMLWidgets.widget({
                         },
                         hide: {
                             fixed: true,
-                            event: 'mouseleave',
+                            //event: 'mouseleave',
                             effect: false
                         },
+                        close: function(event, ui){
+            ui.tooltip.hover(
+                function () {
+                    $(this).stop(true).fadeTo(400, 1); 
+                },
+                function () {
+                    $(this).fadeOut("400", function(){
+                        $(this).remove(); 
+                    })
+                }
+            );
+        },
                         style: {
                             classes: 'qtip-bootstrap',
                             tip: {
