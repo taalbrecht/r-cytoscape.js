@@ -222,7 +222,7 @@ HTMLWidgets.widget({
                         }
                     });
                 });
-                cy.on('mouseenter', 'node', function (event) {
+                cy.on('mouseover', 'node', function (event) {
                     var node = this;
                     //$(".qtip").remove();
                     //console.log(event);
