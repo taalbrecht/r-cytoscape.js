@@ -262,11 +262,11 @@ HTMLWidgets.widget({
                             },
                             effect: false
                         },
-                        hide: {
-                            fixed: true,
-                            event: 'mouseleave',
-                            effect: false
-                        },
+                        //hide: {
+                        //    fixed: true,
+                        //    event: 'mouseleave',
+                        //    effect: false
+                        //},
                         style: {
                             classes: 'qtip-bootstrap',
                             tip: {
