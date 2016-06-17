@@ -250,9 +250,10 @@ HTMLWidgets.widget({
                             }
                         },
                         show: {
-                            ready: true,
+                            ready: true
                             effect: false,
-                            delay: 500
+                            delay: 500,
+                            solo: true
                         },
                         position: {
                             my: 'bottom center',
