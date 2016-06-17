@@ -265,7 +265,7 @@ HTMLWidgets.widget({
                         },
                         hide: {
                             fixed: true,
-                            event: 'mouseleave',
+                            event: 'mouseleave unfocus',
                             effect: false
                         },
                         style: {
